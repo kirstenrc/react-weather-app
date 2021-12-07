@@ -6,4 +6,26 @@
 
 .Weather ul {
   list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.Weather img {
+  display: inline-block;
+  margin-right: 10px;
+  height: 64px;
+  width: 64px;
+}
+
+.Weather .temperature {
+  font-size: 64px;
+  font-weight: 600;
+  line-height: 64px;
+}
+
+.Weather .units {
+  line-height: 1;
+  margin-left: 5px;
+  position: relative;
+  top: -34px;
 }
