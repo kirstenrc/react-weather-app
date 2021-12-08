@@ -1,20 +1,20 @@
 import React, { useState } from "react";
 import axios from "axios";
+import FormattedDate from "./FormattedDate";
 import "./Weather.css";
 
 export default function Weather(props) {
   const [weatherData, setWeatherData] = useState({ ready: false });
   function handleResponse(response) {
-    console.log(response.data);
     setWeatherData({
       ready: true,
       city: response.data.name,
+      date: new Date(response.data.dt * 1000),
       description: response.data.weather[0].description,
       temperature: response.data.main.temp,
       humidity: response.data.main.humidity,
       wind: Math.round(response.data.wind.speed),
       iconUrl: "https://ssl.gstatic.com/onebox/weather/48/partly_cloudy.png",
-      date: "Monday 08:00",
     });
   }
 
@@ -40,24 +40,27 @@ export default function Weather(props) {
         </form>
         <h1 className="mt-2">{weatherData.city}</h1>
         <ul>
-          <li>{weatherData.date}</li>
+          <li>
+            <FormattedDate date={weatherData.date} />
+          </li>
           <li className="text-capitalize">{weatherData.description}</li>
         </ul>
         <div className="row mt-3">
-          <div className="col-6">
-            <div className="clearfix">
-              <img
-                src={weatherData.iconUrl}
-                alt={weatherData.description}
-                className="clearfix"
-              />
-              <span className="temperature">
-                {Math.round(weatherData.temperature)}
-              </span>
-              <span className="units">°F</span>
-            </div>
+          <div className="col-2">
+            <img
+              src={weatherData.iconUrl}
+              alt={weatherData.description}
+              className=""
+            />
           </div>
+
           <div className="col-6">
+            <span className="temperature">
+              {Math.round(weatherData.temperature)}
+            </span>
+            <span className="units">°F</span>
+          </div>
+          <div className="col-4">
             <ul>
               <li>Humidity: {weatherData.humidity}%</li>
               <li>Wind: {weatherData.wind} mph</li>
