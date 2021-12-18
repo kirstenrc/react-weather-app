@@ -1,7 +1,11 @@
 .Weather {
-  border: 1px solid #dadde1;
-  border-radius: 5px;
+  background: rgba(0, 0, 0, 0.1);
+  border-radius: 6px;
   padding: 20px;
+}
+
+.Weather h1 {
+  opacity: 0.8;
 }
 
 .Weather ul {
@@ -20,6 +24,7 @@
   font-size: 64px;
   font-weight: 600;
   line-height: 64px;
+  opacity: 0.8;
 }
 
 .Weather .units {
