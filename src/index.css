@@ -5,8 +5,8 @@ html {
 body {
   background: radial-gradient(
     circle at 0.4% -0.6%,
-    rgb(143, 170, 210) 0%,
-    rgb(255, 177, 177) 90%
+    rgb(143, 170, 210) 10%,
+    rgb(237, 130, 113) 90%
   );
   font-family: "Montserrat", sans-serif;
 }

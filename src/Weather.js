@@ -1,8 +1,8 @@
-import React, { useState } from "react";
-import axios from "axios";
-import WeatherInfo from "./WeatherInfo";
-import WeatherForecast from "./WeatherForecast";
-import "./Weather.css";
+import React, { useState } from 'react';
+import axios from 'axios';
+import WeatherInfo from './WeatherInfo';
+import WeatherForecast from './WeatherForecast';
+import './Weather.css';
 
 export default function Weather(props) {
   const [weatherData, setWeatherData] = useState({ ready: false });
@@ -21,7 +21,7 @@ export default function Weather(props) {
   }
 
   function search() {
-    const apiKey = "b0f53c0693e9322889a32ea02b229166";
+    const apiKey = 'b0f53c0693e9322889a32ea02b229166';
     let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=imperial`;
     axios.get(apiUrl).then(handleResponse);
   }
@@ -37,20 +37,20 @@ export default function Weather(props) {
 
   if (weatherData.ready) {
     return (
-      <div className="Weather">
+      <div className='Weather'>
         <form onSubmit={handleSubmit}>
-          <div className="row">
-            <div className="col">
+          <div className='row'>
+            <div className='col'>
               <input
-                type="search"
-                placeholder="Enter a city..."
-                className="form-control"
-                autoFocus="on"
+                type='search'
+                placeholder='Enter a city...'
+                className='form-control'
+                autoFocus='on'
                 onChange={handleCityChange}
               />
             </div>
-            <div className="col">
-              <button type="submit" className="btn btn-outline-light">
+            <div className='col'>
+              <button type='submit' className='btn btn-outline-light'>
                 Search
               </button>
             </div>
@@ -62,6 +62,6 @@ export default function Weather(props) {
     );
   } else {
     search();
-    return "Loading..";
+    return 'Loading..';
   }
 }
