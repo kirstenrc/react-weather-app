@@ -11,11 +11,16 @@ export default function App() {
           <a
             href="https://github.com/kirstenrc/react-weather-app"
             target="_blank"
-            rel="noopener noreferrer"
-          >
-            Open-source code
+            rel="noreferrer noopener">
+            Open-source
           </a>
-          <span> by Kirsten Cox</span>
+          <span> code by </span>
+          <a
+            href="https://vibrant-galileo-0d7b3f.netlify.app/"
+            target="_blank"
+            rel="noreferrer noopener">
+            Kirsten Cox
+          </a>
         </footer>
       </div>
     </div>
